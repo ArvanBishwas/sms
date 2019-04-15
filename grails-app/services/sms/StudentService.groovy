@@ -39,7 +39,7 @@ class StudentService {
 
 
     def list(GrailsParameterMap params) {
-        params.max = params.max ?: GlobalConfig.itemsPerPage()
+        params.max = params.max ?: 6
         List<Student> studentList = Student.createCriteria().list(params) {
             if (params?.colName && params?.colValue) {
                 like(params.colName, "%" + params.colValue + "%")

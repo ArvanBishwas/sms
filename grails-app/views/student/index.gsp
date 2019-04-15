@@ -15,7 +15,7 @@
                         <g:select name="colName" class="form-control" from="[name: 'Name', email: 'Email', address: 'Address']" value="${params?.colName}" optionKey="key" optionValue="value"/>
                         <g:textField name="colValue" class="form-control" value="${params?.colValue}"/>
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">Search</button>
+                            <button class="btn btn-success" type="submit">Search</button>
                         </span>
                     </div>
                 </g:form>

@@ -2,9 +2,11 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>SMS</title>
 </head>
 <body>
+
+<hr/>
 <h1>Welcome!!!</h1>
 </body>
 </html>
