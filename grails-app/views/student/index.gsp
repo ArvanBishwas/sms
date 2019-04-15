@@ -3,7 +3,8 @@
 
 <div class="card">
     <div class="card-header">
-        <g:message code="StudentList"/>
+        <g:message code="student" args="['List']"/>
+
         %{--Actions--}%
         <span class="float-right">
 
@@ -11,7 +12,7 @@
             <div class="btn-group">
                 <g:form controller="student" action="index" method="GET">
                     <div class="input-group" id="search-area">
-                        <g:select name="colName" class="form-control" from="[name: 'Name', email: 'Email', address:'Address']" value="${params?.colName}" optionKey="key" optionValue="value"/>
+                        <g:select name="colName" class="form-control" from="[name: 'Name', email: 'Email', address: 'Address']" value="${params?.colName}" optionKey="key" optionValue="value"/>
                         <g:textField name="colValue" class="form-control" value="${params?.colValue}"/>
                         <span class="input-group-btn">
                             <button class="btn btn-default" type="submit">Search</button>
@@ -27,10 +28,10 @@
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
-                <g:sortableColumn property="name" title="${g.message(code: "Name")}"/>
-                <g:sortableColumn property="email" title="${g.message(code: "Email")}"/>
-                <g:sortableColumn property="address" title="${g.message(code: "Address")}"/>
-                <th class="action-row"><g:message code="Action"/></th>
+                <g:sortableColumn property="name" title="${g.message(code: "name")}"/>
+                <g:sortableColumn property="email" title="${g.message(code: "email")}"/>
+                <g:sortableColumn property="address" title="${g.message(code: "address")}"/>
+                <th class="action-row"><g:message code="action"/></th>
             </tr>
             </thead>
             <tbody>
