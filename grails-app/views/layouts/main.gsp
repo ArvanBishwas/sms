@@ -8,8 +8,15 @@
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
-
     <asset:stylesheet src="application.css"/>
+    <asset:javascript src="application.js"/>
+    <script>
+    <g:if test="${flash?.message && flash?.message?.info}">
+        jQuery(document).ready(function () {
+           SMS.messageBox.showMessage(Boolean(${flash.message?.success}), "${flash.message?.info}");
+        });
+    </g:if>
+</script>
 
     <g:layoutHead/>
 </head>
@@ -18,7 +25,7 @@
 
 <header>
     <!-- Fixed navbar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="/">Home</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,14 +42,14 @@
         </div>
     </nav>
 </header>
-<br>
+<br/>
+<br/>
+<br/>
 
 <main role="main" class="container">
-<div>
-<g:layoutBody/>
-</div>
+    <g:layoutBody/>
 </main>
-<asset:javascript src="application.js"/>
+
 
 </body>
 </html>

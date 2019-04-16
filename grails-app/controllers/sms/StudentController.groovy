@@ -26,8 +26,10 @@ class StudentController {
         def response = studentService.save(params)
         if (!response.isSuccess) {
             flash.redirectParams = response.model
+            flash.message = AppUtil.infoMessage(g.message(code: "unable.to.save"), false)
             redirect(controller: "student", action: "create")
         }else{
+            flash.message = AppUtil.infoMessage(g.message(code:"saved"))
             redirect(controller: "student", action: "index")
         }
     }
@@ -39,6 +41,7 @@ class StudentController {
         } else {
             def response = studentService.getById(id)
             if (!response) {
+                flash.message = AppUtil.infoMessage(g.message(code:"invalid.entity"), false)
                 redirect(controller: "student", action: "index")
             } else {
                 [student: response]
@@ -50,13 +53,16 @@ class StudentController {
     def update() {
         def response = studentService.getById(params.id)
         if (!response){
+            flash.message = AppUtil.infoMessage(g.message(code:"invalid.entity"), false)
             redirect(controller: "student", action: "index")
         }else{
             response = studentService.update(response, params)
             if (!response.isSuccess){
                 flash.redirectParams = response.model
+                flash.message = AppUtil.infoMessage(g.message(code: "unable.to.update"), false)
                 redirect(controller: "student", action: "edit")
             }else{
+                flash.message = AppUtil.infoMessage(g.message(code: "update"))
                 redirect(controller: "student", action: "index")
             }
         }
@@ -65,9 +71,15 @@ class StudentController {
     def delete(Integer id) {
         def response = studentService.getById(id)
         if (!response){
+            flash.message = AppUtil.infoMessage(g.message(code: "invalid.entity"), false)
             redirect(controller: "student", action: "index")
         }else{
             response = studentService.delete(response)
+            if (!response){
+                flash.message = AppUtil.infoMessage(g.message(code: "unable.to.delete"), false)
+            }else{
+                flash.message = AppUtil.infoMessage(g.message(code: "deleted"))
+            }
             redirect(controller: "student", action: "index")
         }
     }

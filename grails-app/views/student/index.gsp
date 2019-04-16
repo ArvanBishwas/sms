@@ -31,7 +31,7 @@
                 <g:sortableColumn property="name" title="${g.message(code: "name")}"/>
                 <g:sortableColumn property="email" title="${g.message(code: "email")}"/>
                 <g:sortableColumn property="address" title="${g.message(code: "address")}"/>
-                <th class="action-row"><g:message code="action"/></th>
+                <th class="action-row">Action</th>
             </tr>
             </thead>
             <tbody>
