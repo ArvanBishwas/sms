@@ -1,5 +1,6 @@
 
-SMS.messageBox =  (function () {
+
+messageBox =  (function () {
         var messageHtml = '<div class="alert"><b><span class="message"></b></span></div>',
             timeOut = null;
 
@@ -36,4 +37,5 @@ SMS.messageBox =  (function () {
                 }, 6000);
             }
         }
-    }());
+
+}());

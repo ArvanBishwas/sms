@@ -13,7 +13,7 @@
     <script>
     <g:if test="${flash?.message && flash?.message?.info}">
         jQuery(document).ready(function () {
-           SMS.messageBox.showMessage(Boolean(${flash.message?.success}), "${flash.message?.info}");
+           messageBox.showMessage(Boolean(${flash.message?.success}), "${flash.message?.info}");
         });
     </g:if>
 </script>
