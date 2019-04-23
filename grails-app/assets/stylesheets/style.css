@@ -1,3 +1,6 @@
+body {
+    padding-top: 3.5rem;
+}
 
 h1 {
     padding-bottom: 9px;
@@ -5,11 +8,39 @@ h1 {
     border-bottom: 1px solid #eee;
 }
 
+.sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    border-right: 1px solid #eee;
+}
+
+.sidebar .nav {
+    margin-bottom: 20px;
+}
+
+.sidebar .nav-item {
+    width: 100%;
+}
+
+.sidebar .nav-item + .nav-item {
+    margin-left: 0;
+}
+
+.sidebar .nav-link {
+    border-radius: 0;
+}
 
 .action-row{
-    width: 140px;
+    width: 135px;
     text-align: center;
 }
+
 
 .paginate {
     background: #fff;
@@ -59,9 +90,10 @@ h1 {
     float: left;
 }
 
+
 .alert{
-    min-height: 50px;
-    width: 300px;
+    min-height:50px;
+    width: 300px; /** Use 100% to fill the width of the page **/
     position: fixed;
     top: 0;
     left: 0;
@@ -71,6 +103,6 @@ h1 {
     z-index: 2000;
 }
 
-.alerl.message{
+.alert .message{
     font-weight: bold;
 }

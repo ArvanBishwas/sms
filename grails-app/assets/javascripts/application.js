@@ -10,4 +10,6 @@
 //= require popper.min
 //= require sms
 //= require messagebox
+//= require jquery-confirm
+//= require confirmbox.js
 //= require_self

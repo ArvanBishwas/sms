@@ -10,6 +10,7 @@
     <asset:link rel="icon" href="favicon.ico" type="image/x-ico"/>
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
+
     <script>
     <g:if test="${flash?.message && flash?.message?.info}">
         jQuery(document).ready(function () {
